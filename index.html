@@ -66,11 +66,13 @@ function moveSlider(direction) {
         if (i > -400) {
             i -= 100;
             slider.style.left = i + "vw";
+            slider.style.transition = "2000ms ease";
         }
     } else if (direction === "right") {
         if (i < 0) {
             i += 100;
             slider.style.left = i + "vw";
+            slider.style.transition = "2000ms ease";
         }
     }
 }
