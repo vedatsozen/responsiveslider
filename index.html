@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SLIDER</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      
+<div id="slidercontainer">
+
+      <div id="slider">
+
+            <div id="slide1" class="slide">
+                  <h1>SLIDE 1</h1>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam consequatur voluptas earum nulla reiciendis minus illum facilis fugiat harum ex, magni necessitatibus eius perferendis, et eligendi, cumque quas amet! Ad?</p>
+
+            </div>
+            <div id="slide2" class="slide">
+                  <h1>SLIDE 2</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum recusandae obcaecati quod cumque reiciendis blanditiis labore eaque aspernatur ea, assumenda necessitatibus quas, modi repellat incidunt! Quibusdam debitis molestiae ut.</p>
+
+            </div>
+            <div id="slide3" class="slide">
+                  <h1>SLIDE 3</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nostrum facilis consectetur, vero esse dolorem excepturi omnis quas commodi ab dolores minima fugit fugiat, maiores tempore nihil perspiciatis sed quia?</p>
+
+            </div>
+            <div id="slide4" class="slide">
+                  <h1>SLIDE 4</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nostrum facilis consectetur, vero esse dolorem excepturi omnis quas commodi ab dolores minima fugit fugiat, maiores tempore nihil perspiciatis sed quia?</p>
+                  
+            </div>
+            <div id="slide5" class="slide">
+                  <h1>SLIDE 5</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nostrum facilis consectetur, vero esse dolorem excepturi omnis quas commodi ab dolores minima fugit fugiat, maiores tempore nihil perspiciatis sed quia?</p>
+                  
+            </div>
+
+      </div>
+
+      <img class="ok" id="solok" src="images/solok.png">
+      <img class="ok" id="sagok" src="images/sagok.png">
+
+      <div id="circlebtns">
+            <button id="btn1" onclick="gotoslide(0)">1</button>
+            <button id="btn2" onclick="gotoslide(-100)">2</button>
+            <button id="btn3" onclick="gotoslide(-200)">3</button>
+            <button id="btn4" onclick="gotoslide(-300)">4</button>
+            <button id="btn5" onclick="gotoslide(-400)">5</button>
+          
+      </div>
+
+</div>
+
+<script>
+
+let solok = document.getElementById("solok");
+let sagok = document.getElementById("sagok");
+let slider = document.getElementById("slider");
+let i = 0;
+
+function moveSlider(direction) {
+    if (direction === "left") {
+        if (i > -400) {
+            i -= 100;
+            slider.style.left = i + "vw";
+        }
+    } else if (direction === "right") {
+        if (i < 0) {
+            i += 100;
+            slider.style.left = i + "vw";
+        }
+    }
+}
+
+solok.addEventListener("click", function() {
+    moveSlider("left");
+});
+
+sagok.addEventListener("click", function() {
+    moveSlider("right");
+});
+
+function gotoslide(i) {
+      slider.style.left = i + "vw";
+}
+
+
+</script>
+
+</body>
+</html>
